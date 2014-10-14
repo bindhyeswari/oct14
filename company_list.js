@@ -17,14 +17,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // create and push a company object into the list of companies
         companies.push({
-            name: (td_name.firstElementChild || td_name).innerHTML,
-            symbol:(h3_symbol.firstElementChild || h3_symbol).innerHTML.trim(),
-            cap: tds[2].innerHTML === 'n/a' ? null : tds[2].innerHTML,
-            country: tds[4].innerHTML === 'n/a' ? null : tds[4].innerHTML,
-            ipo_year: tds[5].innerHTML === 'n/a' ? null : tds[5].innerHTML,
-            sub_sector: tds[6].innerHTML === 'n/a' ? null : tds[6].innerHTML,
+            name: td_name.textContent,
+            symbol:h3_symbol.textContent.trim(),
+            cap: tds[2].innerHTML === 'n/a' ? null : tds[2].textContent,
+            country: tds[4].innerHTML === 'n/a' ? null : tds[4].textContent,
+            ipo_year: tds[5].innerHTML === 'n/a' ? null : tds[5].textContent,
+            sub_sector: tds[6].innerHTML === 'n/a' ? null : tds[6].textContent
         });
     }
 
+    console.log(companies.map(function (company) { return company.name; }));
     console.log(companies);
+
 });
