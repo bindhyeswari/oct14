@@ -10,8 +10,9 @@ document.addEventListener('DOMContentLoaded', function () {
     for (var i = 0, len = trs.length; i < len; i+=2) {
         var tds = trs[i].children;
 
-        // access the first element child of the tr element = td element
-        var td_name = tds[0];
+
+        var td_name = tds[0]; // access the td element which contains the name information
+        // access the h3 element which contains the symbol information
         var h3_symbol = tds[1].getElementsByClassName('symbol_links')[0].firstElementChild;
 
         // create and push a company object into the list of companies
